@@ -16,16 +16,13 @@ app.use(bodyParser.json());
 var tables = [];
 var reserved = [];
 
-app.get("/", function(req, res){
-    res.send("the server works")
-});
 
 app.get("/", function(req, res){
     res.sendFile(path.join(__dirname, "index.html"))
 });
 
-app.get("/table", function(req, res){
-    res.sendFile(path.join(__dirname, "table.html"))
+app.get("/tables", function(req, res){
+    res.sendFile(path.join(__dirname, "tables.html"))
 })
 
 app.get("/reserved", function(req, res){
