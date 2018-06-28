@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Alex Bruner Portfolio - Home</title>
+    <title>Restaraunt App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- jQuery Link -->
@@ -44,6 +44,21 @@
 
     </div>
  
-<script src="java.js"></script>
+<script>
+    $("#submitBtn").click(function(){
+        event.preventDefault();
+        var newTable = {
+            name: $("#nameBox").val().trim(),
+            email: $("#emailBox").val().trim(),
+            phone: $("#phoneBox").val().trim(),
+            uniqueID: $("#uniqueIDBox").val().trim()
+        }
+    });
+    $.post("/api/tables", newTable)
+    .then(function(data){
+        console.log("somethin happened...", data);
+        alert("added table");
+    });
+</script>
 </body>
 </html>
